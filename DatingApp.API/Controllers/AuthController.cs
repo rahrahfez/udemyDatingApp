@@ -42,10 +42,10 @@ namespace DatingApp.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(UserLoginForDto userLoginForDto)
+        public async Task<IActionResult> Login(UserForLoginDto userForLoginDto)
         {
             // Check username/password if stored in database.
-            var userFromRepo = await _repo.Login(userLoginForDto.Username.ToLower(), userLoginForDto.Password);
+            var userFromRepo = await _repo.Login(userForLoginDto.Username.ToLower(), userForLoginDto.Password);
 
             if (userFromRepo == null)
                 return Unauthorized();
