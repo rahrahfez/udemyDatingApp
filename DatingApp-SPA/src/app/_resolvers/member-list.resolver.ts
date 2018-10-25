@@ -19,5 +19,4 @@ export class MemberListResolver implements Resolve<User[]> {
             })
         );
     }
-
 }
